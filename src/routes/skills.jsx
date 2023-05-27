@@ -14,10 +14,14 @@ import unityimg from '../assets/images/unity3d.png'
 import csharpimg from '../assets/images/csharp.png'
 import photoshopimg from '../assets/images/photoshop.png'
 import blenderimg from '../assets/images/blender3d.png'
-import mcmimg from '../assets/images/mcm.png'
-import datathonimg from '../assets/images/datathon.png'
-import arduinoimg from '../assets/images/arduino.png'
-import pythonimg from '../assets/images/python.png'
+import typescript from '../assets/images/typescript.png'
+import illustrator from '../assets/images/illustrator.png'
+import html from '../assets/images/html.png'
+import css from '../assets/images/css.png'
+import figma from '../assets/images/figma.png'
+import tailwind from '../assets/images/tailwind.png'
+
+
 
 const skills = [
   {
@@ -27,99 +31,72 @@ const skills = [
       {
         image: reactimg,
         name: 'ReactJS',
-        level: 6,
-        description: 'getting the hang of it',
-      },
-      {
-        image: jsimg,
-        name: 'JavaScript',
-        level: 8,
-        description: 'quite good',
-      },
-      {
-        image: nodeimg,
-        name: 'NodeJS',
-        level: 4,
-        description: 'working on it',
-      },
-    ],
-  },
-  {
-    command: 'gamedev',
-    comment: 'i love making games!',
-    data: [
-      {
-        image: unityimg,
-        name: 'Unity 3D',
         level: 9,
         description: 'really good',
       },
       {
-        image: csharpimg,
-        name: 'C#',
-        level: 6,
-        description: 'quite good',
-      },
-    ],
-  },
-  {
-    command: 'dev',
-    comment: "wait, there's more?",
-    data: [
-      {
-        image: pythonimg,
-        name: 'Python',
-        level: 7,
-        description: 'quite good',
-      },
-      {
-        image: arduinoimg,
-        name: 'Arduino',
+        image: typescript,
+        name: 'TypeScript',
         level: 9,
-        description: 'expert',
-      },
-    ],
-  },
-  {
-    command: 'art',
-    comment: 'check out my instagram! @gisketch',
-    data: [
-      {
-        image: photoshopimg,
-        name: 'Photoshop',
-        level: 10,
-        description: 'expert',
+        description: 'really good',
       },
       {
-        image: blenderimg,
-        name: 'Blender 3D',
-        level: 5,
+        image: nodeimg,
+        name: 'NodeJS',
+        level: 2,
         description: 'still learning',
       },
     ],
   },
   {
-    command: 'achievements',
-    comment: 'go check my work at the projects page!',
+    command: 'webdev',
+    comment: 'click anywhere to continue',
     data: [
       {
-        image: mcmimg,
-        name: '2021 MCM YES Champion',
-        level: 10,
-        date: 'November 2021',
-        description:
-          '1st place winner in a one-month game development competition against 11 schools.',
+        image: html,
+        name: 'HTML',
+        level: 9,
+        description: 'really good',
       },
       {
-        image: datathonimg,
-        name: '2022 Datathon National Champion',
-        level: 10,
-        date: 'November 2022',
-        description:
-          'winner of a national programming competition in the philippines.',
+        image: css,
+        name: 'CSS',
+        level: 9,
+        description: 'really good',
+      },
+      {
+        image: tailwind,
+        name: 'Tailwind',
+        level: 7,
+        description: 'quite good',
       },
     ],
   },
+  {
+    command: 'design',
+    comment: 'Thanks',
+    data: [
+      {
+        image: photoshopimg,
+        name: 'Photoshop',
+        level: 3,
+        description: 'still learning',
+      },
+      {
+        image: illustrator,
+        name: 'Illustrator',
+        level: 3,
+        description: 'still learning',
+      },
+      {
+        image: figma,
+        name: 'Figma',
+        level: 7,
+        description: 'quite good',
+      },
+    ],
+  },
+
 ]
 
 function SkillsMap(skills) {
@@ -181,11 +158,11 @@ function Skills() {
                 <div className="Icon"></div>
                 <div className="Icon"></div>
               </div>
-              <div className="Title">gisketch-cli</div>
+              <div className="Title">arbi-cli</div>
             </div>
             <div className="Content">
               <div className="Line">
-                <div className="Prompt">gisketch@dev:~$</div>
+                <div className="Prompt">arbi@dev:~$</div>
                 {isReady ? (
                   <div className="Command">
                     {typing ? (

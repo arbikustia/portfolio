@@ -1,50 +1,44 @@
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import '../styles/Nav.css'
-import { AiOutlineClose, AiOutlineBars } from 'react-icons/ai'
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import "../styles/Nav.css";
+import { AiOutlineClose, AiOutlineBars } from "react-icons/ai";
 
 const status =
-  'Currently studying at University of Southern Mindanao as an EcE student.'
+  "Front-End Developer.";
 
 const navs = [
   {
-    name: 'home',
-    link: '/',
-    color: 'var(--yellow)',
+    name: "home",
+    link: "/",
+    color: "var(--yellow)",
+  },{
+    name: "skills",
+    link: "/skills",
+    color: "var(--red)",
   },
   {
-    name: 'about',
-    link: '/about',
-    color: 'var(--green)',
+    name: "projects",
+    link: "/projects",
+    color: "var(--purple)",
   },
   {
-    name: 'skills',
-    link: '/skills',
-    color: 'var(--red)',
+    name: "contact",
+    link: "/contact",
+    color: "var(--blue)",
   },
-  {
-    name: 'projects',
-    link: '/projects',
-    color: 'var(--purple)',
-  },
-  {
-    name: 'contact',
-    link: '/contact',
-    color: 'var(--blue)',
-  },
-]
+];
 
 function Nav(props) {
-  const [navOpen, setNavOpen] = useState(false)
-  const [isMobile, setIsMobile] = useState(false)
+  const [navOpen, setNavOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768 ? true : false)
-    }
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
+      setIsMobile(window.innerWidth <= 768 ? true : false);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <div>
@@ -52,29 +46,29 @@ function Nav(props) {
         <motion.div
           className="MobileNav"
           initial={{
-            x: '-100%',
+            x: "-100%",
           }}
           animate={{
-            x: navOpen ? 0 : '-100%',
+            x: navOpen ? 0 : "-100%",
           }}
           transition={{
             duration: 1,
           }}
           exit={{
-            x: '-100%',
+            x: "-100%",
           }}
         >
           <motion.div className="MobileNavIcon">
             <AiOutlineClose
               onClick={() => {
-                setNavOpen(false)
+                setNavOpen(false);
               }}
             />
           </motion.div>
           {navs.map((nav, index) => (
             <motion.a
               href={nav.link}
-              key={'nav-' + index}
+              key={"nav-" + index}
               style={{
                 color: nav.color,
               }}
@@ -100,8 +94,8 @@ function Nav(props) {
               delay: 1.5,
             }}
           >
-            <p>dev@gisketch.com</p>
-            <p style={{ fontSize: '1.25rem' }}>PHILIPPINES</p>
+            <p>arbikustia14@gmail.com</p>
+            <p style={{ fontSize: "1.25rem" }}>INDONESIA</p>
             <p>{status}</p>
           </motion.div>
         </motion.div>
@@ -118,12 +112,12 @@ function Nav(props) {
             duration: 0.75,
           }}
         >
-          <motion.h2 style={{ color: props.color }}>GISKETCH 2023</motion.h2>
+          <motion.h2 style={{ color: props.color }}>ARBI KUSTIA</motion.h2>
           <div>
             {navs.map((nav, index) => (
               <motion.a
                 href={nav.link}
-                key={'navMob-' + index}
+                key={"navMob-" + index}
                 whileHover={{
                   color: nav.color,
                   scale: 1.1,
@@ -136,7 +130,7 @@ function Nav(props) {
             <AiOutlineBars
               className="NavIcon"
               onClick={() => {
-                setNavOpen(true)
+                setNavOpen(true);
               }}
             />
           </div>
@@ -146,7 +140,7 @@ function Nav(props) {
               width: 0,
             }}
             animate={{
-              width: '97.5%',
+              width: "97.5%",
             }}
             transition={{
               duration: 0.5,
@@ -156,7 +150,7 @@ function Nav(props) {
         </motion.div>
       </AnimatePresence>
     </div>
-  )
+  );
 }
 
-export default Nav
+export default Nav;

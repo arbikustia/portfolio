@@ -1,14 +1,21 @@
-import Nav from '../components/Nav.jsx';
-import { motion } from 'framer-motion';
-import { TypeAnimation } from 'react-type-animation';
+import Nav from "../components/Nav.jsx";
+import { motion } from "framer-motion";
+import { TypeAnimation } from "react-type-animation";
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from "react";
 
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 
-import { FaGithub, FaTwitter, FaInstagram, FaYoutube, FaPaperPlane } from 'react-icons/fa'
+import {
+  FaGithub,
+  FaTwitter,
+  FaInstagram,
+  FaYoutube,
+  FaPaperPlane,
+  FaLinkedinIn,
+} from "react-icons/fa";
 
-import '../styles/Contact.css'
+import "../styles/Contact.css";
 
 function Caret() {
   const [showCaret, setShowCaret] = useState(true);
@@ -23,9 +30,8 @@ function Caret() {
     };
   }, []);
 
-  return <span>{showCaret ? '|' : ''}</span>;
+  return <span>{showCaret ? "|" : ""}</span>;
 }
-
 
 function Contact() {
   const [contactReady, setContactReady] = useState(false);
@@ -33,14 +39,13 @@ function Contact() {
   const [emailFocus, setEmailFocus] = useState(false);
   const [subjectFocus, setSubjectFocus] = useState(false);
   const [emailBodyFocus, setEmailBodyFocus] = useState(false);
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [subject, setSubject] = useState('');
-  const [emailBody, setEmailBody] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [emailBody, setEmailBody] = useState("");
   const [isEmailValid, setIsEmailValid] = useState(false);
   const [sendingEmail, setSendingEmail] = useState(false);
-  const [sendingEmailText, setSendingEmailText] = useState("Sending Email...")
-
+  const [sendingEmailText, setSendingEmailText] = useState("Sending Email...");
 
   const nameRef = useRef(null);
   const emailRef = useRef(null);
@@ -48,65 +53,71 @@ function Contact() {
   const emailBodyRef = useRef(null);
   const form = useRef();
 
-
   const sendEmail = () => {
-
-    emailjs.sendForm('service_ytcf4kr', 'template_jycn3xn', form.current, 'psgeH9Sn3HF-ug0Wv')
-      .then((result) => {
+    emailjs
+      .sendForm(
+        "service_ytcf4kr",
+        "template_jycn3xn",
+        form.current,
+        "psgeH9Sn3HF-ug0Wv"
+      )
+      .then(
+        (result) => {
           console.log(result.text);
-          if(result.text === "OK") {
-            setSendingEmailText("Email Sent!")
+          if (result.text === "OK") {
+            setSendingEmailText("Email Sent!");
             console.log("EMAIL SENT");
           }
-      }, (error) => {
-        setSendingEmailText("Something went wrong :<")
-      });
+        },
+        (error) => {
+          setSendingEmailText("Something went wrong :<");
+        }
+      );
   };
 
   const handleSendEmail = () => {
-    if(!isEmailValid || name === "" || subject === "" || emailBody === "") {
+    if (!isEmailValid || name === "" || subject === "" || emailBody === "") {
       setSendingEmail(true);
       setSendingEmailText("Please fill out all fields :<");
       return;
     }
     setSendingEmail(true);
     setSendingEmailText("Sending E-mail...");
-    console.log("SENDING...")
+    console.log("SENDING...");
     sendEmail();
-  }
-  
-  const isValidEmail= (email) => {
+  };
+
+  const isValidEmail = (email) => {
     // regular expression to match email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     // check if email matches the regex
     return emailRegex.test(email);
-  }
-  
+  };
+
   const handleNameClick = () => {
     nameRef.current.focus();
-  }
+  };
 
   const handleEmailClick = () => {
     emailRef.current.focus();
-  }
+  };
 
   const handleSubjectClick = () => {
     subjectRef.current.focus();
-  }
+  };
 
   const handleEmailBodyClick = () => {
     emailBodyRef.current.focus();
-  }
+  };
 
   const handleNameChange = (event) => {
     setName(event.target.value);
   };
 
   const handleEmailChange = (event) => {
-    if(event.target.value === "") {
+    if (event.target.value === "") {
       setIsEmailValid(true);
-    } else
-    {
+    } else {
       setIsEmailValid(isValidEmail(event.target.value));
     }
     setEmail(event.target.value);
@@ -121,15 +132,15 @@ function Contact() {
   };
 
   const getEmailComment = () => {
-    if(email === "") {
+    if (email === "") {
       return ` //click me to input your e-mail`;
     }
-    if(isEmailValid) {
+    if (isEmailValid) {
       return ` //awesome`;
-    } else if(!isEmailValid) {
+    } else if (!isEmailValid) {
       return ` //this is not an e-mail :<`;
     }
-  }
+  };
 
   const circleVariants = {
     initial: {
@@ -140,102 +151,110 @@ function Contact() {
     },
   };
 
-
   return (
     <div>
-      <Nav color="var(--blue)"/>
+      <Nav color="var(--blue)" />
       <div className="Contact">
-
-
         <motion.div
-          initial={{scaleY: 0, transformOrigin: 'top'}}
-          animate={{scaleY: 1, transformOrigin: 'top'}}
-          transition={{delay: 1.25, duration: 0.5}}
+          initial={{ scaleY: 0, transformOrigin: "top" }}
+          animate={{ scaleY: 1, transformOrigin: "top" }}
+          transition={{ delay: 1.25, duration: 0.5 }}
           className="Contact-Line"
-          >
-            <motion.div
-              variants={circleVariants}
-              initial="initial"
-              animate="animate"
-              transition={{ delay: 1.5, duration: 0.5 }}
-              className="Contact-Line-Circle"
-              >
-            </motion.div>
+        >
+          <motion.div
+            variants={circleVariants}
+            initial="initial"
+            animate="animate"
+            transition={{ delay: 1.5, duration: 0.5 }}
+            className="Contact-Line-Circle"
+          ></motion.div>
         </motion.div>
 
         <motion.div className="Contact-Header">
-            <div className="Contact-Title">
-              <TypeAnimation sequence={["",1500,"dev@gisketch.com />", ()=>{setContactReady(true)}]} cursor={false} speed={80} />
-            </div>
+          <div className="Contact-Title">
+            <TypeAnimation
+              sequence={[
+                "",
+                1500,
+                "arbikustia14@gmail.com />",
+                () => {
+                  setContactReady(true);
+                },
+              ]}
+              cursor={false}
+              speed={80}
+            />
+          </div>
         </motion.div>
 
         <motion.div
-          initial={{scaleY: 0 , transformOrigin: 'top'}}
-          animate={{scaleY: contactReady ? 1 : 0}}
-          className="Contact-Content">
-
-          <div className="Code-Line">
-            <span className="Line-Number">00</span>
-            <span className="Line-Text">
-              <span className="Line-Methods">class</span>
-              <span className="Line-Prop"> ContactMe</span>
-              {` {`}
-            </span>
-          </div>
-
-          <div className="Code-Line">
+          initial={{ scaleY: 0, transformOrigin: "top" }}
+          animate={{ scaleY: contactReady ? 1 : 0 }}
+          className="Contact-Content"
+        >
+          <div
+            className="Code-Line"
+            onClick={() => {
+              handleNameClick();
+            }}
+            style={{ cursor: "pointer" }}
+          >
             <span className="Line-Number">01</span>
             <span className="Line-Text">
               <span className="Line-Dots">..</span>
-              <span className="Line-Methods">constructor</span>
-              {`() {`}
-            </span>
-          </div>
-
-          <div className="Code-Line" onClick={()=>{handleNameClick()}} style={{cursor: 'pointer'}}>
-            <span className="Line-Number">02</span>
-            <span className="Line-Text">
-              <span className="Line-Dots">....</span>
-              <span className="Line-Scope">this</span>{`.`}
-              <span className="Line-Prop2">name</span>{` = `}
+              <span className="Line-Scope">const </span>
+              <span className="Line-Prop2">name </span>
+              {` = `}
               <span className="Line-String">
-                '<span className={nameFocus ? "Line-Field" : ""}>
-                  {name}
-                </span>
-                {nameFocus ? <Caret /> : ''}'
-              </span>{`;`}
+                '<span className={nameFocus ? "Line-Field" : ""}>{name}</span>
+                {nameFocus ? <Caret /> : ""}'
+              </span>
+              {`;`}
               <span className="Line-Comment">
                 {nameFocus ? null : ` //click me to input your name`}
               </span>
             </span>
           </div>
 
-          <div className="Code-Line" onClick={()=>{handleEmailClick()}} style={{cursor: 'pointer'}}>
+          <div
+            className="Code-Line"
+            onClick={() => {
+              handleEmailClick();
+            }}
+            style={{ cursor: "pointer" }}
+          >
+            <span className="Line-Number">02</span>
+            <span className="Line-Text">
+              <span className="Line-Dots">..</span>
+              <span className="Line-Scope">const </span>
+              <span className="Line-Prop2">email</span>
+              {` = `}
+              <span className="Line-String">
+                '<span className={emailFocus ? "Line-Field" : ""}>{email}</span>
+                {emailFocus ? <Caret /> : ""}'
+              </span>
+              {`;`}
+              <span className="Line-Comment">
+                {emailFocus ? null : getEmailComment()}
+              </span>
+            </span>
+          </div>
+
+          <div className="Code-Line">
             <span className="Line-Number">03</span>
             <span className="Line-Text">
-              <span className="Line-Dots">....</span>
-              <span className="Line-Scope">this</span>{`.`}
-              <span className="Line-Prop2">email</span>{` = `}
-              <span className="Line-String">
-                '<span className={emailFocus ? "Line-Field" : ""}>
-                  {email}
-                </span>
-                {emailFocus ? <Caret /> : ''}'
-              </span>{`;`}
-              <span className="Line-Comment">
-                {
-                  emailFocus ?
-                  null :
-                  getEmailComment()
-                }
-              </span>
             </span>
           </div>
 
           <div className="Code-Line">
             <span className="Line-Number">04</span>
             <span className="Line-Text">
-              <span className="Line-Dots">..</span>{`}`}
+              <span className="Line-Dots">..</span>
+              <span className="Line-Scope">const </span>
+              <span className="Line-Prop">emailBody</span>
+              {` =`}
+              <span className="Line-Methods"> ()</span>
+              <span className="Line-Methods"> {`=> {`}</span>
             </span>
           </div>
 
@@ -243,48 +262,61 @@ function Contact() {
             <span className="Line-Number">05</span>
             <span className="Line-Text">
               <span className="Line-Dots">..</span>
-              <span className="Line-Prop">emailBody</span>{`() {`}
+              <span className="Line-Methods">axios.</span>
+              <span className="Line-Prop2">post</span>
+              <span className="Line-Methods">{`(`}</span>
+              <span className="Line-String">{`"https://sendthisemailtoarbi.me" ,`}</span>
+              <span className="Line-Methods">{"{"}</span>
+              <span className="Line-Methods">{""}</span>
             </span>
           </div>
 
-          <div className="Code-Line">
+          <div
+            className="Code-Line"
+            onClick={() => {
+              handleSubjectClick();
+            }}
+            style={{ cursor: "pointer" }}
+          >
             <span className="Line-Number">06</span>
             <span className="Line-Text">
               <span className="Line-Dots">....</span>
-              <span className="Line-Methods">return</span>{` {`}
-            </span>
-          </div>
-
-          <div className="Code-Line" onClick={()=>{handleSubjectClick()}} style={{cursor: 'pointer'}}>
-            <span className="Line-Number">07</span>
-            <span className="Line-Text">
-              <span className="Line-Dots">......</span>
               <span className="Line-String">'subject'</span>
-                {` : `}
+              {` : `}
               <span className="Line-String">
-                '<span className={subjectFocus ? "Line-Field" : ""}>
+                '
+                <span className={subjectFocus ? "Line-Field" : ""}>
                   {subject}
                 </span>
-                {subjectFocus ? <Caret /> : ''}'
-              </span>{`,`}
+                {subjectFocus ? <Caret /> : ""}'
+              </span>
+              {`,`}
               <span className="Line-Comment">
                 {subjectFocus ? null : ` // What is this email about?`}
               </span>
             </span>
           </div>
 
-          <div className="Code-Line" onClick={()=>{handleEmailBodyClick()}} style={{cursor: 'pointer'}}>
-            <span className="Line-Number">08</span>
+          <div
+            className="Code-Line"
+            onClick={() => {
+              handleEmailBodyClick();
+            }}
+            style={{ cursor: "pointer" }}
+          >
+            <span className="Line-Number">07</span>
             <span className="Line-Text">
-              <span className="Line-Dots">......</span>
+              <span className="Line-Dots">....</span>
               <span className="Line-String">'body'</span>
-                {` : `}
+              {` : `}
               <span className="Line-String">
-                '<span className={emailBodyFocus ? "Line-Field" : ""}>
+                '
+                <span className={emailBodyFocus ? "Line-Field" : ""}>
                   {emailBody}
                 </span>
-                {emailBodyFocus ? <Caret /> : ''}'
-              </span>{`,`}
+                {emailBodyFocus ? <Caret /> : ""}'
+              </span>
+              {`,`}
               <span className="Line-Comment">
                 {emailBodyFocus ? null : ` // What do you want to say?`}
               </span>
@@ -292,25 +324,50 @@ function Contact() {
           </div>
 
           <div className="Code-Line">
+            <span className="Line-Number">08</span>
+            <span className="Line-Text">
+              <span className="Line-Dots">..</span>
+              <span className="Line-Methods">{`})`}</span>
+              
+            </span>
+          </div>
+
+          <div className="Code-Line">
             <span className="Line-Number">09</span>
             <span className="Line-Text">
-              <span className="Line-Dots">....</span>{`}`}
+              <span className="Line-Dots">....</span>
+              <span className="Line-Methods">.then{`(`}</span>
+              <span className="Line-Prop">ressponse</span>
+              <span className="Line-Methods">{`)`}</span>
+              {` => `}
+              <span className="Line-Methods">console.log{`(`}</span>
+              <span className="Line-String">"success"</span>
+              <span className="Line-Methods">{`)`}</span>
             </span>
           </div>
 
           <div className="Code-Line">
             <span className="Line-Number">10</span>
             <span className="Line-Text">
-              <span className="Line-Dots">..</span>{`}`}
+              <span className="Line-Dots">....</span>
+              <span className="Line-Methods">.catch{`(`}</span>
+              <span className="Line-Prop">error</span>
+              <span className="Line-Methods">{`)`}</span>
+              {` => `}
+              <span className="Line-Methods">console.log{`(`}</span>
+              <span className="Line-String">"sorry"</span>
+              <span className="Line-Methods">{`)`}</span>
             </span>
           </div>
 
           <div className="Code-Line">
             <span className="Line-Number">11</span>
             <span className="Line-Text">
-              {`}`}
+              <span className="Line-Dots">..</span>
+              <span className="Line-Methods">{`}`}</span>
             </span>
           </div>
+
 
 
           <form className="InputFields" ref={form} onSubmit={sendEmail}>
@@ -321,9 +378,13 @@ function Contact() {
               name="user_name"
               value={name}
               onChange={handleNameChange}
-              onFocus={()=>{setNameFocus(true)}}
-              onBlur={()=>{setNameFocus(false)}}
-              />
+              onFocus={() => {
+                setNameFocus(true);
+              }}
+              onBlur={() => {
+                setNameFocus(false);
+              }}
+            />
             <input
               ref={emailRef}
               className="Line-Input"
@@ -331,9 +392,13 @@ function Contact() {
               name="user_email"
               value={email}
               onChange={handleEmailChange}
-              onFocus={()=>{setEmailFocus(true)}}
-              onBlur={()=>{setEmailFocus(false)}}
-              />
+              onFocus={() => {
+                setEmailFocus(true);
+              }}
+              onBlur={() => {
+                setEmailFocus(false);
+              }}
+            />
             <input
               ref={subjectRef}
               className="Line-Input"
@@ -341,9 +406,13 @@ function Contact() {
               name="user_subject"
               value={subject}
               onChange={handleSubjectChange}
-              onFocus={()=>{setSubjectFocus(true)}}
-              onBlur={()=>{setSubjectFocus(false)}}
-              />
+              onFocus={() => {
+                setSubjectFocus(true);
+              }}
+              onBlur={() => {
+                setSubjectFocus(false);
+              }}
+            />
             <textarea
               ref={emailBodyRef}
               className="Line-Input"
@@ -351,26 +420,28 @@ function Contact() {
               name="message"
               value={emailBody}
               onChange={handleEmailBodyChange}
-              onFocus={()=>{setEmailBodyFocus(true)}}
-              onBlur={()=>{setEmailBodyFocus(false)}}
-              />
+              onFocus={() => {
+                setEmailBodyFocus(true);
+              }}
+              onBlur={() => {
+                setEmailBodyFocus(false);
+              }}
+            />
           </form>
         </motion.div>
         <motion.div className="Contact-Footer">
           <span className="SendEmail">
             <motion.div
-              initial={{scale:0}}
+              initial={{ scale: 0 }}
               animate={{
-                scale:1, 
-                transition:{duration: 0.5, delay: 2}
-              }} 
-              whileHover={{ color: 'var(--blue)', borderColor: 'var(--blue)'}}
+                scale: 1,
+                transition: { duration: 0.5, delay: 2 },
+              }}
+              whileHover={{ color: "var(--blue)", borderColor: "var(--blue)" }}
               className="Contact-Send-Button"
               onClick={handleSendEmail}
-              >
-              <span>
-                Send E-mail
-              </span>
+            >
+              <span>Send E-mail</span>
               <span>
                 <FaPaperPlane />
               </span>
@@ -379,60 +450,36 @@ function Contact() {
               {sendingEmail ? sendingEmailText : ""}
             </span>
           </span>
-          
+
           <div className="Contact-Socials">
             <motion.a
-              initial={{scale:0}}
+              initial={{ scale: 0 }}
               animate={{
-                scale:1, 
-                transition:{duration: 0.5, delay: 2}
-              }} 
-              whileHover={{
-                color: 'var(--yellow)',
-                transition:{duration: 0.25, delay: 0},
+                scale: 1,
+                transition: { duration: 0.5, delay: 2 },
               }}
-              href="https://github.com/gisketch/">
+              whileHover={{
+                color: "var(--yellow)",
+                transition: { duration: 0.25, delay: 0 },
+              }}
+              href="https://github.com/arbikustia/"
+              target="_blank"
+            >
               <FaGithub />
             </motion.a>
             <motion.a
-              initial={{scale:0}}
-              animate={{
-                scale:1, 
-                transition:{duration: 0.5, delay: 2.25}
-              }} 
-              whileHover={{
-                color: 'var(--cyan)',
-                transition:{duration: 0.25, delay: 0},
-              }}
-              href="https://twitter.com/gisketch">
-              <FaTwitter />
-            </motion.a>
-            <motion.a
-              initial={{scale:0}}
-              animate={{
-                scale:1, 
-                transition:{duration: 0.5, delay: 2.5}
-              }} 
-              whileHover={{
-                color: 'var(--purple)',
-                transition:{duration: 0.25, delay: 0},
-              }}
-              href="https://www.instagram.com/gisketch/">
-              <FaInstagram />
-            </motion.a>
-            <motion.a
-              initial={{scale:0}}
-              animate={{
-                scale:1, 
-                transition:{duration: 0.5, delay: 2.75}
-              }} 
-              whileHover={{
-                color: 'var(--red)',
-                transition:{duration: 0.25, delay: 0},
-              }}
-              href="https://www.youtube.com/@gisketch">
-              <FaYoutube />
-            </motion.a>
+                  initial={{scale:0}}
+                  animate={{
+                    scale:1, 
+                    transition:{duration: 0.5, delay: 2.5}
+                  }} 
+                  whileHover={{
+                    color: 'var(--purple)',
+                    transition:{duration: 0.25, delay: 0},
+                  }}
+                  href="https://www.linkedin.com/in/arbi-kustia-59a572238/" target="_blank">
+                  <FaLinkedinIn />
+                </motion.a>
           </div>
         </motion.div>
       </div>

@@ -15,10 +15,11 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 12rem;
+    height: 10vh;
     background-color: var(--dark);
     z-index: 100;
     pointer-events: all;
+    margin-bottom: 5rem;
 }
   
 .Nav div {

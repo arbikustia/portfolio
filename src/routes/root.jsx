@@ -3,7 +3,7 @@ import Nav from '../components/Nav'
 import { motion } from "framer-motion"
 import { TypeAnimation } from 'react-type-animation'
 
-import { FaGithub, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa'
+import { FaGithub, FaLinkedinIn, FaInstagram, FaYoutube } from 'react-icons/fa'
 
 import portrait from '../assets/images/me.png'
 
@@ -32,8 +32,8 @@ function Root() {
                     delay: 1.5,
                   }
                 }>
-                Ghegi<br />
-                Jimenez
+                Arbi<br />
+                Kustia
               </motion.h1>
               <motion.div
                 initial={
@@ -61,10 +61,8 @@ function Root() {
                 sequence={[
                   '//WEB DEVELOPER', 
                   2000, 
-                  '//GAME DEVELOPER', 
+                  '//FRONT-END DEVELOPER', 
                   2000, 
-                  '//ARTIST',
-                  2000,
                   () => {}
                 ]}
                 wrapper="div"
@@ -84,21 +82,8 @@ function Root() {
                     color: 'var(--yellow)',
                     transition:{duration: 0.25, delay: 0},
                   }}
-                  href="https://github.com/gisketch/">
+                  href="https://github.com/arbikustia/">
                   <FaGithub />
-                </motion.a>
-                <motion.a
-                  initial={{scale:0}}
-                  animate={{
-                    scale:1, 
-                    transition:{duration: 0.5, delay: 2.25}
-                  }} 
-                  whileHover={{
-                    color: 'var(--cyan)',
-                    transition:{duration: 0.25, delay: 0},
-                  }}
-                  href="https://twitter.com/gisketch">
-                  <FaTwitter />
                 </motion.a>
                 <motion.a
                   initial={{scale:0}}
@@ -110,21 +95,8 @@ function Root() {
                     color: 'var(--purple)',
                     transition:{duration: 0.25, delay: 0},
                   }}
-                  href="https://www.instagram.com/gisketch/">
-                  <FaInstagram />
-                </motion.a>
-                <motion.a
-                  initial={{scale:0}}
-                  animate={{
-                    scale:1, 
-                    transition:{duration: 0.5, delay: 2.75}
-                  }} 
-                  whileHover={{
-                    color: 'var(--red)',
-                    transition:{duration: 0.25, delay: 0},
-                  }}
-                  href="https://www.youtube.com/@gisketch">
-                  <FaYoutube />
+                  href="https://www.linkedin.com/in/arbi-kustia-59a572238/">
+                  <FaLinkedinIn />
                 </motion.a>
               </div>
               
