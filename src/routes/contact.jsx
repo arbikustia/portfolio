@@ -1,16 +1,11 @@
 import Nav from "../components/Nav.jsx";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
-
 import { useState, useRef, useEffect } from "react";
-
 import emailjs from "@emailjs/browser";
 
 import {
   FaGithub,
-  FaTwitter,
-  FaInstagram,
-  FaYoutube,
   FaPaperPlane,
   FaLinkedinIn,
 } from "react-icons/fa";
@@ -56,10 +51,10 @@ function Contact() {
   const sendEmail = () => {
     emailjs
       .sendForm(
-        "service_ytcf4kr",
-        "template_jycn3xn",
+        "service_yybexf6",
+        "template_c7hz8nk",
         form.current,
-        "psgeH9Sn3HF-ug0Wv"
+        "jHGIAVkqwFOXMCX1N"
       )
       .then(
         (result) => {
@@ -341,7 +336,7 @@ function Contact() {
               <span className="Line-Methods">{`)`}</span>
               {` => `}
               <span className="Line-Methods">console.log{`(`}</span>
-              <span className="Line-String">"success"</span>
+              <span className="Line-String">"Email Sent!"</span>
               <span className="Line-Methods">{`)`}</span>
             </span>
           </div>
@@ -355,7 +350,7 @@ function Contact() {
               <span className="Line-Methods">{`)`}</span>
               {` => `}
               <span className="Line-Methods">console.log{`(`}</span>
-              <span className="Line-String">"sorry"</span>
+              <span className="Line-String">"Something went wrong {`:<`}"</span>
               <span className="Line-Methods">{`)`}</span>
             </span>
           </div>

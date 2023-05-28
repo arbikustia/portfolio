@@ -4,6 +4,7 @@
     margin: 0;
     min-height: calc(100vh - 12rem);
     padding: 0;
+    scroll-behavior: smooth;
   }
   
   .Contact-Line {

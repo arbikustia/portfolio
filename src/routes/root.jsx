@@ -82,7 +82,7 @@ function Root() {
                     color: 'var(--yellow)',
                     transition:{duration: 0.25, delay: 0},
                   }}
-                  href="https://github.com/arbikustia/">
+                  href="https://github.com/arbikustia/" target='_blank'>
                   <FaGithub />
                 </motion.a>
                 <motion.a
@@ -95,7 +95,7 @@ function Root() {
                     color: 'var(--purple)',
                     transition:{duration: 0.25, delay: 0},
                   }}
-                  href="https://www.linkedin.com/in/arbi-kustia-59a572238/">
+                  href="https://www.linkedin.com/in/arbi-kustia-59a572238/" target='_blank'>
                   <FaLinkedinIn />
                 </motion.a>
               </div>

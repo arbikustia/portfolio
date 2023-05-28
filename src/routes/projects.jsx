@@ -145,7 +145,7 @@ function Projects() {
               <RandomReveal
                 isPlaying
                 duration={1.5}
-                characters="Selected dev and art projects..."
+                characters="Frontend Project"
                 revealEasing="easeInQuad"
                 characterSet={randomRevealCharacters}
               />
