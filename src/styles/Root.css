@@ -46,6 +46,7 @@
     height: 45rem;
     width: 45rem;
     margin-right: 2rem;
+    object-fit: contain;
   }
   
   .Socials {

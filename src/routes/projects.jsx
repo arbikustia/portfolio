@@ -8,12 +8,6 @@ import { RandomReveal } from "react-random-reveal";
 
 import React, { useState, useRef, useEffect } from "react";
 
-import aottgimg from "../assets/project_img/aottg.jpg";
-import zeldaimg from "../assets/project_img/zelda.png";
-import datathonimg from "../assets/project_img/datathon.jpg";
-import covidimg from "../assets/project_img/covid.png";
-import animationimg from "../assets/project_img/animation.jpg";
-import artimg from "../assets/project_img/instagram.png";
 import cookit from "../assets/project_img/cookit.jpg";
 import airbnb from "../assets/project_img/airbnb.jpg";
 import dashboard from "../assets/project_img/dashboard.jpg";

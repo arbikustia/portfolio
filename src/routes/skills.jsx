@@ -8,12 +8,8 @@ import Skill from '../components/Skill'
 
 // SKILLS DATABASE
 import reactimg from '../assets/images/reactjs.png'
-import jsimg from '../assets/images/js.png'
 import nodeimg from '../assets/images/node.png'
-import unityimg from '../assets/images/unity3d.png'
-import csharpimg from '../assets/images/csharp.png'
 import photoshopimg from '../assets/images/photoshop.png'
-import blenderimg from '../assets/images/blender3d.png'
 import typescript from '../assets/images/typescript.png'
 import illustrator from '../assets/images/illustrator.png'
 import html from '../assets/images/html.png'
