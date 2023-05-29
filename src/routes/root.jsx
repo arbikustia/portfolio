@@ -3,7 +3,7 @@ import Nav from '../components/Nav'
 import { motion } from "framer-motion"
 import { TypeAnimation } from 'react-type-animation'
 
-import { FaGithub, FaLinkedinIn, FaInstagram, FaYoutube } from 'react-icons/fa'
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 
 import portrait from '../assets/images/me.png'
 
@@ -52,11 +52,7 @@ function Root() {
                     delay: 1.75,
                   }
                 }
-                onAnimationEnd={
-                  ()=>{
-                    setSocialsReady(true)
-                  }
-                }>
+                >
                 <TypeAnimation
                 sequence={[
                   '//WEB DEVELOPER', 
@@ -122,7 +118,7 @@ function Root() {
               }
               className="Portrait" 
               src={portrait} 
-              alt="Me in ASCII" />
+              alt="Me" />
         </div>
       </div>
     )

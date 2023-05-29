@@ -1,8 +1,6 @@
 import { TypeAnimation } from "react-type-animation";
-import { motion } from "framer-motion";
 
 import { LazyLoadImage } from 'react-lazy-load-image-component'
-import { MutatingDots } from 'react-loader-spinner'
 
 import { RandomReveal } from 'react-random-reveal'
 

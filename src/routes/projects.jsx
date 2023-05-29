@@ -6,12 +6,11 @@ import { TypeAnimation } from "react-type-animation";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { RandomReveal } from "react-random-reveal";
 
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import cookit from "../assets/project_img/cookit.jpg";
 import airbnb from "../assets/project_img/airbnb.jpg";
 import dashboard from "../assets/project_img/dashboard.jpg";
-
 
 const projects = [
   {
@@ -176,6 +175,7 @@ function Projects() {
                   {project.projects.map((proj, projindex) => {
                     return (
                       <motion.div
+                        key={projindex}
                         className={`Project-Wrapper Card-${
                           (projindex + index + 1) % 2 === 1 ? "Left" : "Right"
                         }`}

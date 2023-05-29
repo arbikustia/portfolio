@@ -64,7 +64,7 @@ function Contact() {
             console.log("EMAIL SENT");
           }
         },
-        (error) => {
+        () => {
           setSendingEmailText("Something went wrong :<");
         }
       );
@@ -201,8 +201,8 @@ function Contact() {
               <span className="Line-Prop2">name </span>
               {` = `}
               <span className="Line-String">
-                '<span className={nameFocus ? "Line-Field" : ""}>{name}</span>
-                {nameFocus ? <Caret /> : ""}'
+                {`'`}<span className={nameFocus ? "Line-Field" : ""}>{name}</span>
+                {nameFocus ? <Caret /> : ""}{`'`}
               </span>
               {`;`}
               <span className="Line-Comment">
@@ -225,8 +225,8 @@ function Contact() {
               <span className="Line-Prop2">email</span>
               {` = `}
               <span className="Line-String">
-                '<span className={emailFocus ? "Line-Field" : ""}>{email}</span>
-                {emailFocus ? <Caret /> : ""}'
+              {`'`}<span className={emailFocus ? "Line-Field" : ""}>{email}</span>
+                {emailFocus ? <Caret /> : ""}{`'`}
               </span>
               {`;`}
               <span className="Line-Comment">
@@ -260,7 +260,7 @@ function Contact() {
               <span className="Line-Methods">axios.</span>
               <span className="Line-Prop2">post</span>
               <span className="Line-Methods">{`(`}</span>
-              <span className="Line-String">{`"https://sendthisemailtoarbi.me" ,`}</span>
+              <span className="Line-String">{"'https://sendthisemailtoarbi.me' ,"}</span>
               <span className="Line-Methods">{"{"}</span>
               <span className="Line-Methods">{""}</span>
             </span>
@@ -276,14 +276,14 @@ function Contact() {
             <span className="Line-Number">06</span>
             <span className="Line-Text">
               <span className="Line-Dots">....</span>
-              <span className="Line-String">'subject'</span>
+              <span className="Line-String">{"'subject'"}</span>
               {` : `}
               <span className="Line-String">
-                '
+              {`'`}
                 <span className={subjectFocus ? "Line-Field" : ""}>
                   {subject}
                 </span>
-                {subjectFocus ? <Caret /> : ""}'
+                {subjectFocus ? <Caret /> : ""}{`'`}
               </span>
               {`,`}
               <span className="Line-Comment">
@@ -302,14 +302,14 @@ function Contact() {
             <span className="Line-Number">07</span>
             <span className="Line-Text">
               <span className="Line-Dots">....</span>
-              <span className="Line-String">'body'</span>
+              <span className="Line-String">{"'body'"}</span>
               {` : `}
               <span className="Line-String">
-                '
+              {`'`}
                 <span className={emailBodyFocus ? "Line-Field" : ""}>
                   {emailBody}
                 </span>
-                {emailBodyFocus ? <Caret /> : ""}'
+                {emailBodyFocus ? <Caret /> : ""}{`'`}
               </span>
               {`,`}
               <span className="Line-Comment">
@@ -336,7 +336,7 @@ function Contact() {
               <span className="Line-Methods">{`)`}</span>
               {` => `}
               <span className="Line-Methods">console.log{`(`}</span>
-              <span className="Line-String">"Email Sent!"</span>
+              <span className="Line-String">{"'Email Sent!'"}</span>
               <span className="Line-Methods">{`)`}</span>
             </span>
           </div>
@@ -350,7 +350,7 @@ function Contact() {
               <span className="Line-Methods">{`)`}</span>
               {` => `}
               <span className="Line-Methods">console.log{`(`}</span>
-              <span className="Line-String">"Something went wrong {`:<`}"</span>
+              <span className="Line-String">{`'`}Something went wrong {`:<`}{`'`}</span>
               <span className="Line-Methods">{`)`}</span>
             </span>
           </div>

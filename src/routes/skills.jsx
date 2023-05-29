@@ -1,104 +1,102 @@
-import '../styles/Skills.css'
-import Nav from '../components/Nav'
-import { motion } from 'framer-motion'
-import { TypeAnimation } from 'react-type-animation'
-import { useState } from 'react'
+import "../styles/Skills.css";
+import Nav from "../components/Nav";
+import { motion } from "framer-motion";
+import { TypeAnimation } from "react-type-animation";
+import { useState } from "react";
 
-import Skill from '../components/Skill'
+import Skill from "../components/Skill";
 
 // SKILLS DATABASE
-import reactimg from '../assets/images/reactjs.png'
-import nodeimg from '../assets/images/node.png'
-import photoshopimg from '../assets/images/photoshop.png'
-import typescript from '../assets/images/typescript.png'
-import illustrator from '../assets/images/illustrator.png'
-import html from '../assets/images/html.png'
-import css from '../assets/images/css.png'
-import figma from '../assets/images/figma.png'
-import tailwind from '../assets/images/tailwind.png'
-
-
+import reactimg from "../assets/images/reactjs.png";
+import nodeimg from "../assets/images/node.png";
+import photoshopimg from "../assets/images/photoshop.png";
+import typescript from "../assets/images/typescript.png";
+import illustrator from "../assets/images/illustrator.png";
+import html from "../assets/images/html.png";
+import css from "../assets/images/css.png";
+import figma from "../assets/images/figma.png";
+import tailwind from "../assets/images/tailwind.png";
 
 const skills = [
   {
-    command: 'webdev',
-    comment: 'click anywhere to continue',
+    command: "webdev",
+    comment: "click anywhere to continue",
     data: [
       {
         image: reactimg,
-        name: 'ReactJS',
+        name: "ReactJS",
         level: 9,
-        description: 'really good',
+        description: "really good",
       },
       {
         image: typescript,
-        name: 'TypeScript',
+        name: "TypeScript",
         level: 9,
-        description: 'really good',
+        description: "really good",
       },
       {
         image: nodeimg,
-        name: 'NodeJS',
+        name: "NodeJS",
         level: 2,
-        description: 'still learning',
+        description: "still learning",
       },
     ],
   },
   {
-    command: 'webdev',
-    comment: 'click anywhere to continue',
+    command: "webdev",
+    comment: "click anywhere to continue",
     data: [
       {
         image: html,
-        name: 'HTML',
+        name: "HTML",
         level: 9,
-        description: 'really good',
+        description: "really good",
       },
       {
         image: css,
-        name: 'CSS',
+        name: "CSS",
         level: 9,
-        description: 'really good',
+        description: "really good",
       },
       {
         image: tailwind,
-        name: 'Tailwind',
+        name: "Tailwind",
         level: 7,
-        description: 'quite good',
+        description: "quite good",
       },
     ],
   },
   {
-    command: 'design',
-    comment: 'Thanks',
+    command: "design",
+    comment: "Thanks",
     data: [
       {
         image: photoshopimg,
-        name: 'Photoshop',
+        name: "Photoshop",
         level: 3,
-        description: 'still learning',
+        description: "still learning",
       },
       {
         image: illustrator,
-        name: 'Illustrator',
+        name: "Illustrator",
         level: 3,
-        description: 'still learning',
+        description: "still learning",
       },
       {
         image: figma,
-        name: 'Figma',
+        name: "Figma",
         level: 7,
-        description: 'quite good',
+        description: "quite good",
       },
     ],
   },
-
-]
+];
 
 function SkillsMap(skills) {
   return skills.map((skill, index) => {
     return (
       <motion.div
+        key={index}
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ delay: 0 + index * 0.125, duration: 0.5 }}
@@ -109,18 +107,18 @@ function SkillsMap(skills) {
           level={skill.level}
           date={skill.date}
           description={skill.description}
-          key={'skill-' + index}
+          key={"skill-" + index}
         />
       </motion.div>
-    )
-  })
+    );
+  });
 }
 
 function Skills() {
-  const [typing, setTyping] = useState(true)
-  const [isReady, setIsReady] = useState(false)
-  const [skillsState, setSkillsState] = useState(0)
-  const [isReadyForComment, setIsReadyForComment] = useState(false)
+  const [typing, setTyping] = useState(true);
+  const [isReady, setIsReady] = useState(false);
+  const [skillsState, setSkillsState] = useState(0);
+  const [isReadyForComment, setIsReadyForComment] = useState(false);
 
   return (
     <div>
@@ -132,18 +130,18 @@ function Skills() {
           animate={{ scale: 1 }}
           transition={{ delay: 1.25, duration: 0.5 }}
           onAnimationComplete={() => {
-            setIsReady(true)
+            setIsReady(true);
           }}
           onClick={() => {
             if (typing) {
-              return
+              return;
             }
             if (skillsState < skills.length - 1) {
-              setSkillsState(skillsState + 1)
-              setTyping(true)
+              setSkillsState(skillsState + 1);
+              setTyping(true);
             } else {
-              setSkillsState(0)
-              setTyping(true)
+              setSkillsState(0);
+              setTyping(true);
             }
           }}
         >
@@ -167,8 +165,8 @@ function Skills() {
                           `skills ${skills[skillsState].command}`,
                           750,
                           () => {
-                            setTyping(false)
-                            setIsReadyForComment(true)
+                            setTyping(false);
+                            setIsReadyForComment(true);
                           },
                         ]}
                       />
@@ -195,7 +193,7 @@ function Skills() {
                     {isReadyForComment ? (
                       <TypeAnimation
                         sequence={[
-                          '',
+                          "",
                           1000,
                           `>> page ${skillsState + 1}/${skills.length} (${
                             skills[skillsState].comment
@@ -214,7 +212,7 @@ function Skills() {
         </motion.div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Skills
+export default Skills;
