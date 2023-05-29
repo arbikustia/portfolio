@@ -2,16 +2,17 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "../styles/Nav.css";
 import { AiOutlineClose, AiOutlineBars } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
-const status =
-  "Front-End Developer.";
+const status = "Front-End Developer.";
 
 const navs = [
   {
     name: "home",
     link: "/",
     color: "var(--yellow)",
-  },{
+  },
+  {
     name: "skills",
     link: "/skills",
     color: "var(--red)",
@@ -66,23 +67,24 @@ function Nav(props) {
             />
           </motion.div>
           {navs.map((nav, index) => (
-            <motion.a
-              href={nav.link}
-              key={"nav-" + index}
-              style={{
-                color: nav.color,
-              }}
-              animate={{
-                opacity: navOpen ? 1 : 0,
-                x: navOpen ? 0 : -300,
-              }}
-              transition={{
-                duration: 0.75,
-                delay: 0.75 + index * 0.1,
-              }}
-            >
-              {nav.name}
-            </motion.a>
+            <Link key={index} to={nav.link} />
+            // <motion.a
+            //   href={nav.link}
+            //   key={"nav-" + index}
+            //   style={{
+            //     color: nav.color,
+            //   }}
+            //   animate={{
+            //     opacity: navOpen ? 1 : 0,
+            //     x: navOpen ? 0 : -300,
+            //   }}
+            //   transition={{
+            //     duration: 0.75,
+            //     delay: 0.75 + index * 0.1,
+            //   }}
+            // >
+            //   {nav.name}
+            // </motion.a>
           ))}
           <motion.div
             className="Status"
