@@ -123,7 +123,6 @@ function Nav(props) {
           <div>
             {navs.map((nav, index) => (
               <motion.a
-                href={nav.link}
                 key={"navMob-" + index}
                 whileHover={{
                   color: nav.color,
@@ -131,7 +130,7 @@ function Nav(props) {
                   textShadow: `0px 0px 2px #ffffffaa}`,
                 }}
               >
-                {nav.name}
+                <Link to="/">{nav.name}</Link>
               </motion.a>
             ))}
             <AiOutlineBars
