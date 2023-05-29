@@ -66,26 +66,31 @@ function Nav(props) {
               }}
             />
           </motion.div>
-          {navs.map((nav, index) => (
-            <Link key={index} to={nav.link} />
-            // <motion.a
-            //   href={nav.link}
-            //   key={"nav-" + index}
-            //   style={{
-            //     color: nav.color,
-            //   }}
-            //   animate={{
-            //     opacity: navOpen ? 1 : 0,
-            //     x: navOpen ? 0 : -300,
-            //   }}
-            //   transition={{
-            //     duration: 0.75,
-            //     delay: 0.75 + index * 0.1,
-            //   }}
-            // >
-            //   {nav.name}
-            // </motion.a>
-          ))}
+          <div>
+            <Link to="/">home</Link>
+            <Link to="/skills">skills</Link>
+            <Link to="/projects">project</Link>
+            <Link to="/contact">contact</Link>
+          </div>
+          {/* {navs.map((nav, index) => (
+            <motion.a
+              href={nav.link}
+              key={"nav-" + index}
+              style={{
+                color: nav.color,
+              }}
+              animate={{
+                opacity: navOpen ? 1 : 0,
+                x: navOpen ? 0 : -300,
+              }}
+              transition={{
+                duration: 0.75,
+                delay: 0.75 + index * 0.1,
+              }}
+            >
+              {nav.name}
+            </motion.a>
+          ))} */}
           <motion.div
             className="Status"
             animate={{
