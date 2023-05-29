@@ -130,7 +130,7 @@ function Nav(props) {
                   textShadow: `0px 0px 2px #ffffffaa}`,
                 }}
               >
-                <Link to="/">{nav.name}</Link>
+                <Link to={nav.link}>{nav.name}</Link>
               </motion.a>
             ))}
             <AiOutlineBars
