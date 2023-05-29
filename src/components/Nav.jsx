@@ -66,15 +66,8 @@ function Nav(props) {
               }}
             />
           </motion.div>
-          <div>
-            <Link to="/">home</Link>
-            <Link to="/about">skills</Link>
-            <Link to="/projects">project</Link>
-            <Link to="/contact">contact</Link>
-          </div>
-          {/* {navs.map((nav, index) => (
+          {navs.map((nav, index) => (
             <motion.a
-              href={nav.link}
               key={"nav-" + index}
               style={{
                 color: nav.color,
@@ -88,9 +81,9 @@ function Nav(props) {
                 delay: 0.75 + index * 0.1,
               }}
             >
-              {nav.name}
+              <Link to={nav.link}>{nav.name}</Link>
             </motion.a>
-          ))} */}
+          ))}
           <motion.div
             className="Status"
             animate={{
