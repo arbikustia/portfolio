@@ -68,7 +68,7 @@ function Nav(props) {
           </motion.div>
           <div>
             <Link to="/">home</Link>
-            <Link to="/skills">skills</Link>
+            <Link to="/about">skills</Link>
             <Link to="/projects">project</Link>
             <Link to="/contact">contact</Link>
           </div>
