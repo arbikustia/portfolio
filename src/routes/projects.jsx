@@ -125,7 +125,7 @@ function Projects() {
               sequence={[
                 "",
                 1500,
-                "Projects />",
+                "< Projects />",
                 () => {
                   setProjectsReady(true);
                 },

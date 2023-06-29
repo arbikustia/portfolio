@@ -18,7 +18,7 @@
     height: 10vh;
     width: 100vw;
     background-color: var(--white);
-    z-index: 100;
+    z-index: 200;
     pointer-events: all;
 
 }
