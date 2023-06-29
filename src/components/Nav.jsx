@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import "../styles/Nav.css";
 import { AiOutlineClose, AiOutlineBars } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import myLogo from "../assets/images/mylogo.png"
 
 const status = "Front-End Developer.";
 
@@ -113,7 +114,9 @@ function Nav(props) {
             duration: 0.75,
           }}
         >
-          <motion.h2 style={{ color: props.color }}>ARBI KUSTIA</motion.h2>
+          <motion.img  style={{ color: props.color }} src={myLogo}>
+
+          </motion.img>
           <div>
             {navs.map((nav, index) => (
               <motion.a

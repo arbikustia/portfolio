@@ -13,6 +13,22 @@ function Root() {
       <Nav color="var(--yellow)" />
       <div className="Home">
         <div className="Name">
+        <motion.h2
+            initial={{
+              opacity: 0,
+              x: -100,
+            }}
+            animate={{
+              opacity: 1,
+              x: 0,
+            }}
+            transition={{
+              duration: 0.5,
+              delay: 1.5,
+            }}
+          >
+            Arbi Kustia
+          </motion.h2>
           <motion.h1
             initial={{
               opacity: 0,

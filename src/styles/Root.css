@@ -22,6 +22,15 @@
   justify-content: center;
 }
 
+.Name h2 {
+  font-family: "bold";
+  font-size: 3.5rem;
+  line-height: 3rem;
+  margin-bottom: 1rem;
+  color: var(--darker);
+  max-width: 40vw;
+}
+
 .Name h1 {
   font-family: "Light";
   font-size: 1.5rem;

@@ -22,6 +22,11 @@
     pointer-events: all;
 
 }
+
+.Nav img{
+  width: 2rem;
+  margin-left: 2rem;
+}
   
 .Nav div {
     display: flex;
