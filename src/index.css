@@ -1,5 +1,4 @@
 /* Import Fira Code font from Google Fonts */
-@import url('https://fonts.googleapis.com/css?family=Fira+Code:200,300,400,500,600,700');
 
 @font-face {
   font-family: 'Light';
@@ -36,6 +35,7 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   
+  
   --dark: #282C34;
   --darker: #17191d;
   --light: #abb2bf;
@@ -49,8 +49,9 @@
   --orange: #D19A66;
   --purple: #C678DD;
   --cyan: #56B6C2;
+  --white: #ffff;
   
-  background-color: var(--dark);
+  background-color: var(--white);
   color: var(--light);
 
 }

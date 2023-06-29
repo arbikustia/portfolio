@@ -1,7 +1,7 @@
 .BorderNav {
     position: absolute;
     bottom: 0;
-    background-color: var(--light);
+    background-color: var(--darker);
     height: 0.15rem;
     width: 97.5%;
     margin-left: 1.25%;
@@ -9,14 +9,15 @@
   }
 
 .Nav {
-    position: relative;
+    position: fixed;
     top: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     height: 10vh;
-    background-color: var(--dark);
+    width: 100vw;
+    background-color: var(--white);
     z-index: 100;
     pointer-events: all;
 
@@ -36,7 +37,7 @@
 .Nav div a {
     margin: 0 2rem;
     text-decoration: none;
-    color: var(--light);
+    color: var(--darker);
     font-family: 'Medium', sans-serif;
     font-size: 1rem;
     cursor: pointer;
@@ -57,7 +58,7 @@
     }
   
     .Nav {
-      height: 8rem;
+      height:10vh;
     }
   
     .NavIcon {
@@ -65,7 +66,7 @@
       cursor: pointer;
       font-size: 2rem;
       margin-right: 2rem;
-      color: var(--light);
+      color: var(--darker);
     }
   
     .NavIcon:hover {
@@ -80,11 +81,11 @@
         left: 0;
         height: 100vh;
         width: 100vw;
-        background-color: var(--dark);
+        background-color: var(--comment);
         z-index: 1000;
         display: flex;
         flex-direction: column;
-        border-right: 0.15rem solid var(--light);
+        /* border-right: 0.15rem solid var(--darker); */
         padding-top: 10rem;
     }
 
@@ -94,14 +95,15 @@
         margin-left: 2rem;
         cursor: pointer;
         text-decoration: none;
+        color: var(--darker);
     }
 
     .MobileNavIcon {
-        color: var(--light);
+        color: var(--darker);
         font-size: 3rem;
         position: fixed;
-        top: 2rem;
-        right: 2rem;
+        top: 0.7rem;
+        right: 1.4rem;
         cursor: pointer;
     }
 

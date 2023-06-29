@@ -100,6 +100,7 @@ function Nav(props) {
           </motion.div>
         </motion.div>
 
+        {/* dekstop */}
         <motion.div
           className="Nav"
           initial={{

@@ -171,7 +171,7 @@ function Contact() {
               sequence={[
                 "",
                 1500,
-                "arbikustia14@gmail.com />",
+                "< arbikustia14@gmail.com />",
                 () => {
                   setContactReady(true);
                 },

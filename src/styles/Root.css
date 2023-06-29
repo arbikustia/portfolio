@@ -1,95 +1,114 @@
 .Home {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: end;
-    height: 100%;
-    flex: 1;
-    overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: end;
+  height: 100%;
+  flex: 1;
+  overflow: hidden;
+  height: 90vh;
+  padding-top: 10vh;
+}
+
+.Name {
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 2rem;
+  justify-content: center;
+}
+
+.Name h1 {
+  font-family: "Light";
+  font-size: 1.5rem;
+  line-height: 3rem;
+  margin-bottom: 1rem;
+  color: var(--darker);
+  max-width: 40vw;
+}
+
+.Name div {
+  font-family: "Light";
+  line-height: 2rem;
+  font-size: 2rem;
+  color: var(--darker);
+}
+
+.Portrait {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  height: auto;
+  width: 45rem;
+  margin-right: 2rem;
+  object-fit: contain;
+}
+
+.Socials {
+  position: absolute;
+  left: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem;
+  z-index: 10;
+}
+
+.Socials a {
+  color: var(--darker);
+  font-size: 1.75rem;
+}
+
+/* MOBILE NAVIGATION */
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+
+  .Home {
+    height: 90vh;
+    padding-top: 10vh;
   }
-  
-  .Name {
-    z-index: 2;
-    position: relative;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 2rem;
+
+  .Home .Name {
+    position: absolute;
+    top: 2rem;
+    padding-top: 5vh;
+    height: fit-content;
+    padding-right: 1rem;
   }
-  
-  
-  .Name h1{
-    /* background-color: aqua; */
-    font-family: 'Bold';
-    font-size: 8.5rem;
-    line-height: 8rem;
-    margin-bottom: 1rem;
-    color: var(--blue);
-  }
-  
-  .Name div{
-    /* background-color: red; */
-    font-family: 'Medium';
-    line-height: 2rem;
-    font-size: 2rem;
-    color: var(--comment);
-  }
-  
+
   .Portrait {
-    position: fixed;
+    position: absolute;
     right: 0;
     bottom: 0;
-    top: 1rem;
     z-index: 0;
-    height: 45rem;
-    width: 45rem;
-    margin-right: 2rem;
-    object-fit: contain;
+    height: auto;
+    width: 25rem;
+    margin-right: 0;
   }
-  
-  .Socials {
-    margin-top: 1.5rem;
-    display: flex;
-    flex-direction: row;
-    gap: 0.75rem;
+
+  .Name h1 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-top: 5rem;
+    text-align: start;
+    max-width: 100vw;
   }
-  
-  .Socials a{
-    color: var(--light);
-    font-size: 1.75rem;
-  }
-  
-  /* MOBILE NAVIGATION */
-  
-  
-  
-  @media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-  
-    .Home {
-      height: calc(100svh - 8rem);
-    }
-  
-    .Portrait {
-      height: 25rem;
-      width: 25rem;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-    }
-  
-    .Name h1{
-      font-size: 4.5rem;
-      line-height: 4rem;
-      margin-bottom: 1rem;
-    }
+
+  .Name div {
+    line-height: 1rem;
+    font-size: 1rem;
     
-    .Name div{
-      line-height: 1rem;
-      font-size: 1rem;
-    }
-  
   }
+
+  .Socials{
+    position: absolute;
+    bottom: 0;
+    left: 1rem;
+  }
+
+}
