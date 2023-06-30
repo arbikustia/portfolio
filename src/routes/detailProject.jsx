@@ -1,6 +1,6 @@
 // import DetailSection from "../components/DetailSection";
 import Nav from "../components/Nav";
-import "../styles/Detailproject.css";
+import "../styles/DetailProject.css";
 import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
 
