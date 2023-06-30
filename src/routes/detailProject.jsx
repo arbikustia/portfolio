@@ -90,25 +90,29 @@ function detailProject() {
           ""
         )}
         <div className="link">
-          <motion.a
-            className="source-code"
-            href={data.figma}
-            target="_blank"
-            initial={{
-              opacity: 0,
-              y: -100,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.5,
-              delay: 1.5,
-            }}
-          >
-            visit figma
-          </motion.a>
+          {data.figma !== "false" ? (
+            <motion.a
+              className="source-code"
+              href={data.figma}
+              target="_blank"
+              initial={{
+                opacity: 0,
+                y: -100,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.5,
+                delay: 1.5,
+              }}
+            >
+              visit figma
+            </motion.a>
+          ) : (
+            ""
+          )}
           <motion.a
             className="source-code"
             href={data.githubfe}
