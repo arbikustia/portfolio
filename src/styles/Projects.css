@@ -71,7 +71,7 @@
 .Projects-Section-Title {
   width: 100%;
   position: absolute;
-  font-size: 8rem;
+  font-size: 5rem;
   font-family: "Bold";
   color: var(--comment);
   z-index: -999;
