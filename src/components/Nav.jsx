@@ -30,9 +30,9 @@ const navs = [
   },
 ];
 
-function Nav(props) {
+function Nav() {
   const [navOpen, setNavOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -114,7 +114,7 @@ function Nav(props) {
             duration: 0.75,
           }}
         >
-          <motion.img  style={{ color: props.color }} src={myLogo}>
+          <motion.img src={myLogo}>
 
           </motion.img>
           <div>

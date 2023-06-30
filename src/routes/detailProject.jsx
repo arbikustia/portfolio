@@ -197,10 +197,6 @@ function detailProject() {
             ""
           )}
         </div>
-
-        {/* <DetailSection title="Design Tool" tool={data.designtool} namelink="visit figma" link="https://arbikustia.netlify.app"/>
-      <DetailSection title="FrontEnd Stack" tool={data.festack} namelink="visit Github" link="https://arbikustia.netlify.app"/>
-      <DetailSection title="BackEnd Stack" tool={data.bestack} namelink="visit Github" link="https://arbikustia.netlify.app"/> */}
       </div>
     </div>
   );
